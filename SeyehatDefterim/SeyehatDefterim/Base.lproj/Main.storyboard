@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zOn-eD-7QI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--YerlerVC-->
+        <scene sceneID="eRd-EG-euZ">
+            <objects>
+                <viewController id="D8T-Lo-sjy" customClass="yerlerVC" customModule="SeyehatDefterim" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ht-aW-Kcw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iOz-Nh-4ev">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NDX-jO-QS0">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gu0-64-ebp" firstAttribute="bottom" secondItem="iOz-Nh-4ev" secondAttribute="bottom" id="SWn-QL-7QN"/>
+                            <constraint firstItem="iOz-Nh-4ev" firstAttribute="leading" secondItem="gu0-64-ebp" secondAttribute="leading" id="h8n-RJ-Lis"/>
+                            <constraint firstItem="gu0-64-ebp" firstAttribute="trailing" secondItem="iOz-Nh-4ev" secondAttribute="trailing" id="iMx-Mg-zHV"/>
+                            <constraint firstItem="iOz-Nh-4ev" firstAttribute="top" secondItem="gu0-64-ebp" secondAttribute="top" id="kWy-Vn-BJ0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gu0-64-ebp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uco-ZB-G7P">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3vE-i4-jZj">
+                            <connections>
+                                <action selector="ekleButton:" destination="D8T-Lo-sjy" id="oPL-HL-FQ4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="NDX-jO-QS0" id="ZXv-Qj-h3N"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segue" id="77F-Ik-WUa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khC-nO-P6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282" y="118"/>
+        </scene>
+        <!--Yer EkleVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="yerEkleVC" customModule="SeyehatDefterim" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zAR-89-aku">
+                                <rect key="frame" x="0.0" y="189" width="375" height="431"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oyv-T8-ji6">
+                                <rect key="frame" x="313" y="628" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eeb-3R-yGI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Ekle"/>
+                                <connections>
+                                    <action selector="ekleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zyj-bI-6c5"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Favori Yerinizin Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XRS-MY-MEg">
+                                <rect key="frame" x="16" y="86" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Yorumunuz" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RhT-Hb-o76">
+                                <rect key="frame" x="16" y="133" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zAR-89-aku" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2L1-ss-JSy"/>
+                            <constraint firstItem="zAR-89-aku" firstAttribute="top" secondItem="RhT-Hb-o76" secondAttribute="bottom" constant="26" id="9J7-43-XnU"/>
+                            <constraint firstAttribute="trailing" secondItem="zAR-89-aku" secondAttribute="trailing" id="9Rr-ag-Ald"/>
+                            <constraint firstItem="XRS-MY-MEg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="E56-Fk-yWX"/>
+                            <constraint firstItem="XRS-MY-MEg" firstAttribute="leading" secondItem="RhT-Hb-o76" secondAttribute="leading" id="I6I-TY-RhO"/>
+                            <constraint firstItem="XRS-MY-MEg" firstAttribute="trailing" secondItem="RhT-Hb-o76" secondAttribute="trailing" id="O1B-BP-eiY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Oyv-T8-ji6" secondAttribute="bottom" constant="9" id="O9W-Mh-43W"/>
+                            <constraint firstItem="RhT-Hb-o76" firstAttribute="top" secondItem="XRS-MY-MEg" secondAttribute="bottom" constant="17" id="adA-Bb-tpd"/>
+                            <constraint firstItem="RhT-Hb-o76" firstAttribute="trailing" secondItem="Oyv-T8-ji6" secondAttribute="trailing" id="caQ-7c-bPM"/>
+                            <constraint firstItem="Oyv-T8-ji6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="313" id="gyD-Gu-ETR"/>
+                            <constraint firstItem="XRS-MY-MEg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="hgw-vP-U7d"/>
+                            <constraint firstItem="Oyv-T8-ji6" firstAttribute="top" secondItem="zAR-89-aku" secondAttribute="bottom" constant="8" symbolic="YES" id="pqL-1o-syT"/>
+                            <constraint firstItem="RhT-Hb-o76" firstAttribute="centerX" secondItem="zAR-89-aku" secondAttribute="centerX" id="ts9-gf-wxw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="zAR-89-aku" id="sbI-c8-a55"/>
+                        <outlet property="yerText" destination="XRS-MY-MEg" id="UQI-6o-fEu"/>
+                        <outlet property="yorumText" destination="RhT-Hb-o76" id="RWb-bc-gVX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="456.80000000000001" y="118.29085457271366"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aSn-0J-SPP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zOn-eD-7QI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7ZU-4F-Ylc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="D8T-Lo-sjy" kind="relationship" relationship="rootViewController" id="ebx-hj-IQN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EEp-uw-Kg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1034" y="117"/>
+        </scene>
+    </scenes>
+</document>
